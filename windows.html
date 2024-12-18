@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activate Windows</title>
+  <style>
+    body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    color: #333;
+}
+
+.command-box {
+    background-color: #2b2b2b;
+    color: #c5c8c6;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+pre {
+    margin: 0;
+}
+code {
+    display: block;
+    white-space: pre-wrap;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Activate MS Windows 11 (illegally)</h1>
+  </header>
+  <main>
+    <section id="activation">
+      <h2>Activation Commands</h2>
+
+      <div class="command-section">
+        <h3>Open Powershell as Adminester <br> Activate the Key according to the version of you have installed.</h3>
+        <div class="command-box">
+          <button id="copy-btn-1" class="copy-btn" onclick="copyToClipboard(1)">Copy</button>
+          <pre><code id="command1">
+slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
+          </code></pre>
+        </div>
+
+
+        <h3>Setting the KMS server address</h3>
+        <div class="command-box">
+          <button  id="copy-btn-3" class="copy-btn" onclick="copyToClipboard(3)">Copy</button>
+          <pre><code id="command3">
+slmgr /skms kms8.msguides.com
+          </code></pre>
+        </div>
+
+        <h3>Execute the activation</h3>
+        <div class="command-box">
+          <button  id="copy-btn-4" class="copy-btn" onclick="copyToClipboard(4)">Copy</button>
+          <pre><code id="command4">
+slmgr /ato
+          </code></pre>
+        </div>
+        <h3>And Done ! you have sucesssfully activated your Windows.  but in case the activation key failed then change the key and rest of the procedure will be same</h3>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Activate MS Office Guide (illegally)</p>
+  </footer>
+
+  <script>
+    function copyToClipboard(commandNum) {
+      const commandId = `command${commandNum}`;
+      const commandText = document.getElementById(commandId).textContent.trim();
+  
+      const textarea = document.createElement('textarea');
+      textarea.value = commandText;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+  
+      // Update the specific button text to "Copied!" temporarily
+      const copyButton = document.getElementById(`copy-btn-${commandNum}`);
+      copyButton.textContent = 'Copied!';
+      setTimeout(() => {
+        copyButton.textContent = 'Copy';
+      }, 1500); // Reset button text after 1.5 seconds
+    }
+  </script>
+  
+</body>
+</html>
